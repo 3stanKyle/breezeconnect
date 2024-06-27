@@ -12,45 +12,51 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #f5f5f5;
         }
         h1 {
             color: #0066cc;
         }
         .tab {
             overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            display: inline-flex;
+            padding: 5px;
         }
         .tab button {
-            background-color: inherit;
+            background-color: transparent;
             float: left;
             border: none;
             outline: none;
             cursor: pointer;
-            padding: 14px 16px;
+            padding: 10px 20px;
             transition: 0.3s;
             font-size: 17px;
+            border-radius: 20px;
+            margin: 0 5px;
         }
         .tab button:hover {
             background-color: #ddd;
         }
         .tab button.active {
-            background-color: #ccc;
+            background-color: white;
+            font-weight: bold;
         }
         .tabcontent {
             display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
+            padding: 20px 0;
         }
         table {
             border-collapse: collapse;
             width: 100%;
             margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 12px;
             text-align: left;
         }
         th {
@@ -63,6 +69,61 @@
         ul {
             padding-left: 20px;
         }
+        .plan-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .plan-card {
+            width: 28%;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .plan-card h3 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+        .plan-card p {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .plan-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .plan-card li {
+            margin-bottom: 5px;
+        }
+        .plan-card li::before {
+            content: "✓ ";
+            color: #0066cc;
+        }
+        .get-quote-btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .office-size {
+            background-color: #d2ebfc;
+            color: #0066cc;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -73,6 +134,7 @@
         <button class="tablinks" onclick="openPlanType(event, 'Premium')">Premium</button>
         <button class="tablinks" onclick="openPlanType(event, 'Wireless')">Wireless</button>
         <button class="tablinks" onclick="openPlanType(event, 'SOHO')">SOHO</button>
+        <button class="tablinks" onclick="openPlanType(event, 'Enterprise')">Enterprise</button>
     </div>
 
     <div id="Pro" class="tabcontent">
@@ -112,8 +174,7 @@
                 <td>BREEZE PRO 1000</td>
                 <td>1000/400</td>
                 <td>$268.18</td>
-                <td>$295.00</td>
-            </tr>
+                         </tr>
         </table>
     </div>
 
@@ -211,6 +272,57 @@
                 <td>$139.00</td>
             </tr>
         </table>
+    </div>
+
+    <div id="Enterprise" class="tabcontent">
+        <h2>Breeze Enterprise Fibre Plans</h2>
+        <div class="plan-cards">
+            <div class="plan-card">
+                <h3>Breeze Fibre 250</h3>
+                <div class="office-size">MID-SIZED OFFICES</div>
+                <p>Tailored to a smaller number of users and devices with lower intensity workloads.</p>
+                <h4>NBN® 250/250Mbps</h4>
+                <p>with nbn® Enterprise Ethernet</p>
+                <ul>
+                    <li>Unlimited data</li>
+                    <li>Symmetrical speed</li>
+                    <li>nbn® eSLA fast fault fixes</li>
+                    <li>99.95% network availability</li>
+                    <li>$0 fibre install available</li>
+                </ul>
+                <button class="get-quote-btn">Get Quote Now</button>
+            </div>
+            <div class="plan-card">
+                <h3>Breeze Fibre 500</h3>
+                <div class="office-size">LARGE OFFICES</div>
+                <p>Support a wide range of high-performance apps and workloads.</p>
+                <h4>NBN® 500/500Mbps</h4>
+                <p>with nbn® Enterprise Ethernet</p>
+                <ul>
+                    <li>Unlimited data</li>
+                    <li>Symmetrical speed</li>
+                    <li>nbn® eSLA fast fault fixes</li>
+                    <li>99.95% network availability</li>
+                    <li>$0 fibre install available</li>
+                </ul>
+                <button class="get-quote-btn">Get Quote Now</button>
+            </div>
+            <div class="plan-card">
+                <h3>Breeze Fibre 1000</h3>
+                <div class="office-size">MAJOR OFFICES OR HQ</div>
+                <p>Handle the highest intensity workloads for a very large number of users and devices.</p>
+                <h4>NBN® 1000/1000Mbps</h4>
+                <p>with nbn® Enterprise Ethernet</p>
+                <ul>
+                    <li>Unlimited data</li>
+                    <li>Symmetrical speed</li>
+                    <li>nbn® eSLA fast fault fixes</li>
+                    <li>99.95% network availability</li>
+                    <li>$0 fibre install available</li>
+                </ul>
+                <button class="get-quote-btn">Get Quote Now</button>
+            </div>
+        </div>
     </div>
 
     <h2>General Information for All Plans</h2>
