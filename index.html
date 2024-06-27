@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>Breeze NBN Plans Summary</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Outfit', sans-serif;
             line-height: 1.6;
             color: #333;
             max-width: 1200px;
@@ -32,16 +33,17 @@
             cursor: pointer;
             padding: 10px 20px;
             transition: 0.3s;
-            font-size: 17px;
+            font-size: 14px;
             border-radius: 20px;
             margin: 0 5px;
+            font-family: 'Outfit', sans-serif;
         }
         .tab button:hover {
             background-color: #ddd;
         }
         .tab button.active {
             background-color: white;
-            font-weight: bold;
+            font-weight: 600;
         }
         .tabcontent {
             display: none;
@@ -71,25 +73,41 @@
         }
         .plan-cards {
             display: flex;
-            justify-content: space-between;
+            gap: 12px; /* This creates a 12px gap between the cards */
+            justify-content: flex-start; /* Aligns cards to the start of the container */
             flex-wrap: wrap;
         }
+
         .plan-card {
-            width: 28%;
+            width: calc((100% - 24px) / 3); /* Subtracts the total gap space and divides by 3 */
+            max-width: 320px;
             background-color: white;
             border-radius: 8px;
-            padding: 20px;
+            padding: 24px;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        
         .plan-card h3 {
             color: #0066cc;
             margin-top: 0;
+            font-size: 32px;
+            margin-bottom: 5px;
         }
+
+        .plan-card h4 {
+            font-size: 20px;
+            margin-bottom: 0;
+            color: #333;
+        }
+
         .plan-card p {
-            font-size: 0.9em;
-            margin-bottom: 10px;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            color: #666;
         }
+
         .plan-card ul {
             list-style-type: none;
             padding-left: 0;
@@ -98,13 +116,18 @@
             margin-bottom: 5px;
         }
         .plan-card li::before {
-            content: "✓ ";
-            color: #0066cc;
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
         }
         .get-quote-btn {
             background-color: #0066cc;
             color: white;
-            border: none;
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
@@ -112,18 +135,33 @@
             font-size: 16px;
             margin-top: 10px;
             cursor: pointer;
-            border-radius: 5px;
+            border: none;
+            border-radius: 32px;
+            font-family: 'Outfit', sans-serif;
         }
         .office-size {
             background-color: #d2ebfc;
             color: #0066cc;
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 15px;
-            font-size: 0.8em;
+            font-size: 10px;
             font-weight: bold;
             display: inline-block;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
+
+        @media (max-width: 768px) {
+        .plan-card {
+            width: calc((100% - 12px) / 2); /* Two cards per row on medium screens */
+        }
+    }
+
+        @media (max-width: 480px) {
+        .plan-card {
+            width: 100%; /* Full width on small screens */
+        }
+    }
     </style>
 </head>
 <body>
