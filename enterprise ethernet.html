@@ -262,8 +262,48 @@
         }
 
         .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .form-group textarea {
             resize: vertical;
             min-height: 100px;
+        }
+
+        /* Style for dropdown menus */
+        select#selectedPlan,
+        select#selectedCoS {
+            width: 100%;
+            padding: 10px 30px 10px 10px; /* Increased right padding for arrow */
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-family: 'Work Sans', sans-serif;
+            background-color: #fff;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            appearance: none; /* Remove default arrow icon */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px top 50%;
+            background-size: 8px auto;
+        }
+
+        select#selectedPlan:focus,
+        select#selectedCoS:focus {
+            border: 2px #0070c0;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+
+        /* Style for the placeholder option */
+        select#selectedPlan option[value=""],
+        select#selectedCoS option[value=""] {
+            color: #6c757d;
+            font-style: italic;
         }
 
         .full-width {
@@ -491,50 +531,59 @@
         </div>
     </section>
 
-    <section class="quote-form-section">
+    <section class="section quote-form-section">
         <div class="container">
-            <h2>GET A QUOTE</h2>
-            <form id="quoteForm">
-                <div class="form-group">
-                    <label for="firstName">First Name <span class="required">*</span></label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name <span class="required">*</span></label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="selectedPlan">Selected Plan</label>
-                    <input type="text" id="selectedPlan" name="selectedPlan" value="Breeze Fibre 250" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="selectedCoS">Selected Class of Service</label>
-                    <input type="text" id="selectedCoS" name="selectedCoS" value="Low CoS" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="businessName">Business Name <span class="required">*</span></label>
-                    <input type="text" id="businessName" name="businessName" required>
-                </div>
-                <div class="form-group">
-                    <label for="siteAddress">Site Address for NBN Connection</label>
-                    <input type="text" id="siteAddress" name="siteAddress">
-                </div>
-                <div class="form-group full-width">
-                    <label for="additionalNotes">Additional Notes</label>
-                    <textarea id="additionalNotes" name="additionalNotes" rows="4"></textarea>
-                </div>
-                <div class="form-group full-width">
-                    <button type="submit" class="submit-btn">Submit Enquiry →</button>
-                </div>
-            </form>
+          <h2>GET A QUOTE</h2>
+          <form id="quoteForm">
+            <div class="form-group">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="selectedPlan">Selected Plan</label>
+              <select id="selectedPlan" name="selectedPlan">
+                <option value="">Choose a plan</option>
+                <option value="Breeze Fibre 250">Breeze Fibre 250</option>
+                <option value="Breeze Fibre 500">Breeze Fibre 500</option>
+                <option value="Breeze Fibre 1000">Breeze Fibre 1000</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="selectedCoS">Selected Class of Service</label>
+              <select id="selectedCoS" name="selectedCoS">
+                <option value="">Choose a class of service</option>
+                <option value="High CoS">High CoS</option>
+                <option value="Low CoS">Low CoS</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="businessName">Business Name <span class="required">*</span></label>
+              <input type="text" id="businessName" name="businessName" required>
+            </div>
+            <div class="form-group">
+              <label for="siteAddress">Site Address for NBN Connection</label>
+              <input type="text" id="siteAddress" name="siteAddress">
+            </div>
+            <div class="form-group full-width">
+              <label for="additionalNotes">Additional Notes</label>
+              <textarea id="additionalNotes" name="additionalNotes"></textarea>
+            </div>
+            <div class="form-group full-width">
+              <button type="submit" class="submit-btn">Submit Enquiry →</button>
+            </div>
+          </form>
         </div>
     </section>
 
@@ -571,6 +620,47 @@
             };
             console.log(JSON.stringify(formData, null, 2));
             alert('Thank you for your interest. We will get back to you soon.');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const planCards = document.querySelectorAll('.plan-card');
+            const cosOptions = document.querySelectorAll('.cos-option');
+            const selectedPlanDropdown = document.getElementById('selectedPlan');
+            const selectedCoSDropdown = document.getElementById('selectedCoS');
+
+            function updateSelectedState(elements, selectedValue) {
+                elements.forEach(element => {
+                if (element.textContent.trim().includes(selectedValue)) {
+                    element.classList.add('selected');
+                } else {
+                    element.classList.remove('selected');
+                }
+                });
+            }
+
+            selectedPlanDropdown.addEventListener('change', function() {
+                updateSelectedState(planCards, this.value);
+            });
+
+            selectedCoSDropdown.addEventListener('change', function() {
+                updateSelectedState(cosOptions, this.value);
+            });
+
+            planCards.forEach(card => {
+                card.addEventListener('click', function() {
+                const planName = this.querySelector('h3').textContent.trim();
+                selectedPlanDropdown.value = planName;
+                updateSelectedState(planCards, planName);
+                });
+            });
+
+            cosOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                const cosName = this.querySelector('h3').textContent.trim();
+                selectedCoSDropdown.value = cosName;
+                updateSelectedState(cosOptions, cosName);
+                });
+            });
         });
 
         document.getElementById('addressInput').addEventListener('input', function(e) {
