@@ -13,26 +13,31 @@
             margin: 0;
             padding: 0;
         }
+
         .container {
             max-width: 1216px;
             margin: auto;
             padding: 20px;
         }
+
         h2 {
             text-align: center;
             font-size: 32px;
             font-weight: 900;
         }
+
         .hero {
             background-color: #003468;
             text-align: center;
             padding: 50px 0;
         }
+
         .hero .container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .hero h1 {
             background-color: #0066cc;
             color: white;
@@ -42,6 +47,7 @@
             margin-bottom: 0px;
             text-align: center;
         }
+
         .hero h2 {
             color: white;
             font-size: 56px;
@@ -49,31 +55,37 @@
             line-height: 56px;
             margin: 24px 0 0 0;
         }
+
         .benefits {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             margin:24px 0;
         }
+
         .benefit {
             width: 100%;
             text-align: center;
             margin-bottom: 24px;
         }
+
         .benefit h3 {
             font-size: 21px;
             line-height: 1.2em;
         }
+
         .benefit p {
             font-size: 14px;
             line-height: auto;
         }
+
         .benefit-icon {
             width: 50px;
             height: 50px;
             margin-bottom: 0px;
             color: #F89F3C;
         }
+
         .address-input-section {
             text-align: center;
             background-color: #f5f5f5;
@@ -85,24 +97,30 @@
             border: 1px solid #ddd;
             border-radius: 25px;
             font-size: 16px;
+            text-align: center;
+            box-sizing: border-box;
         }
         
         .address-hint {
             font-size: 14px;
             color: #666;
         }
+
         .plans-section {
             background-color: #f5f5f7;
         }
+
         .class-of-service-section {
             background-color: #f5f5f7;
         }
+
         .plans, .class-of-service {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             margin: 50px 0;
         }
+
         .plan-card, .cos-option {
             background-color: white;
             border: 1px solid #ddd;
@@ -111,64 +129,132 @@
             margin-bottom: 20px;
             width: 100%;
             cursor: pointer;
+            position: relative;
         }
+
         .plan-card.selected, .cos-option.selected {
-            border-color: #0066cc;
-            border-width: 3px;
+            border-color: #0070c0;
+            border-width: 2px;
+            border-radius: 20px;
         }
+
         .plan-card h3 {
             font-size: 24px;
-            line-height: 24px;
+            text-shadow: 0px 2px 2px #0574c3;
+            padding: 24px;
+            padding-bottom: 32px;
+            background: linear-gradient(to top, #35a3f2, #0070c0);
+            color: white;
+            border-radius: 16px 16px 0 0;
+            margin: -24px -24px 32px -24px;
+            position: relative;
+            z-index: 0;
         }
+
+        .plan-card ul {
+            list-style: none;
+            padding-left: 0;
+            line-height: 32px;
+            list-style-type: none;
+        }
+
+        .plan-card li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 10px;
+        }
+
+        .plan-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230070c0'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .office-size {
+            display: inline-block;
+            background-color: #d6eeff;
+            color: #0070c0;
+            font-weight:bold;
+            padding: 8px 16px;
+            border-radius: 16px;
+            letter-spacing: 0.12em;
+            font-size: 0.7em;
+            position: absolute;
+            top: 60px;
+            left: 24px;
+            transform: translateY(50%);
+            z-index: 1;
+        }
+
         .cos-option h3 {
             font-size: 24px;
-            line-height: 24px;
+            text-shadow: 0px 2px 2px #0574c3;
+            padding: 24px;
+            background: linear-gradient(to top, #35a3f2, #0070c0);
+            color: white;
+            border-radius: 16px 16px 0 0;
+            margin: -24px -24px 24px -24px;
+            position: relative;
+            z-index: 0;
         }
+
+        .cos-type {
+            display: inline-block;
+            background-color: #d6eeff;
+            color: #0070c0;
+            font-weight:bold;
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-size: 16px;
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            z-index: 1;
+        }
+
         .nbn-speed {
             font-size: 21px;
             font-weight: bold;
         }
+
         .nbn-speed-note {
             font-size: 14px;
             font-weight: 400;
         }
-        .plan-card ul {
-            padding-left: 20px;
-            text-align: left;
-            line-height: 32px;
-        }
-        .office-size {
-            display: inline-block;
-            background-color: #0066cc;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 16px;
-            letter-spacing: 0.12em;
-            font-size: 0.7em;
-            margin-bottom: 10px;
-        }
+        
         .quote-form-section {
             background-color: #f5f5f7;
         }
+
         .quote-form-section h2 {
             text-align: center;
             margin-bottom: 40px;
             font-size: 32px;
             font-weight: 900;
         }
+
         #quoteForm {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
         }
+
         .form-group {
             display: flex;
             flex-direction: column;
         }
+
         .form-group label {
             font-weight: 700;
             margin-bottom: 8px;
         }
+
         .form-group input,
         .form-group textarea {
             padding: 12px;
@@ -176,37 +262,44 @@
             border-radius: 4px;
             font-family: 'Work Sans', sans-serif;
         }
+
         .form-group textarea {
             resize: vertical;
             min-height: 100px;
         }
+
         .full-width {
             grid-column: 1 / -1;
         }
+
         .submit-btn {
             background-color: #007bff;
             color: white;
             padding: 12px 24px;
             border: none;
-            border-radius: 4px;
+            border-radius: 28px;
             cursor: pointer;
             font-size: 16px;
             font-weight: 700;
             transition: background-color 0.3s;
             width: fit-content;
         }
+ 
         .submit-btn:hover {
             background-color: #0056b3;
         }
+
         .required {
             color: red;
         }
-        footer {
+
+        .fibre-install-section {
             background-color: #0066cc;
             text-align: center;
             padding: 20px 0;
         }
-        footer h2 {
+        
+        .fibre-install-section h2 {
             color: white;
             font-size: 32px;
             font-weight: 900;
@@ -321,7 +414,7 @@
     <section class="address-input-section">
         <div class="container">
             <h2>ENTER YOUR ADDRESS</h2>
-            <input type="text" class="address-input" id="addressInput" placeholder="Enter your address">
+            <input type="text" class="address-input" id="addressInput">
             <p class="address-hint">Type your address to get started</p>
         </div>
     </section>
@@ -388,12 +481,12 @@
             <div class="class-of-service">
                 <div class="cos-option" onclick="selectCoS(this, 'High CoS')">
                     <h3>High CoS</h3>
-                    <p><strong>Type:</strong> Committed 1:1</p>
+                    <span class="cos-type">Committed 1:1</span>
                     <p>All data allocated to this class of service is given priority across the nbn™ network over best efforts residential and business traffic. This is the highest quality data on Enterprise Ethernet with commitments to customers on network latency, jitter and frame delay.</p>
                 </div>
                 <div class="cos-option" onclick="selectCoS(this, 'Low CoS')">
                     <h3>Low CoS</h3>
-                    <p><strong>Type:</strong>Best Efforts</p>
+                    <span class="cos-type">Best-Efforts</span>
                     <p>Speeds include best effort contention and are not guaranteed. This is best for Web Browsing, File Transfer, E-Commerce and E-mail. Speeds can be affected by factors such as, network congestion, on-premise equipment, the remote party being accessed, and fibre transmission overheads.</p>
                 </div>
             </div>
@@ -447,12 +540,12 @@
         </div>
     </section>
 
-    <footer>
+    <section class="fibre-install-section">
         <div class="container">
             <h2>UPGRADE TO NBN® ENTERPRISE ETHERNET WITH A $0* FIBRE INSTALL</h2>
             <p style="color: white">* Subject to a site qualification and over a 36 month term.</p>
         </div>
-    </footer>
+    </section>
 
     <script>
         function selectPlan(element, planName) {
