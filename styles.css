@@ -1,0 +1,394 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1216px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.hero {
+    background-color: #003468;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1 {
+    background-color: #0066cc;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.hero h2 {
+    color: white;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 56px;
+    margin: 24px 0 0 0;
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:24px 0;
+}
+
+.benefit {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.benefit h3 {
+    font-size: 21px;
+    line-height: 1.2em;
+}
+
+.benefit p {
+    font-size: 14px;
+    line-height: auto;
+}
+
+.benefit-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0px;
+    color: #F89F3C;
+}
+
+.address-input-section {
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.address-input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.address-hint {
+    font-size: 14px;
+    color: #666;
+}
+
+.plans-section {
+    background-color: #f5f5f7;
+}
+
+.class-of-service-section {
+    background-color: #f5f5f7;
+}
+
+.plans, .class-of-service {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+.plan-card, .cos-option {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.plan-card.selected, .cos-option.selected {
+    border-color: #0070c0;
+    border-width: 2px;
+    border-radius: 19px;
+    box-shadow: 0px 4px 10px #c0c0c0;
+}
+
+.plan-card h3 {
+    font-size: 24px;
+    text-shadow: 0px 2px 2px #0574c3;
+    padding: 32px 24px 32px 24px;
+    background: linear-gradient(to top, #35a3f2, #0070c0);
+    color: white;
+    border-radius: 16px 16px 0 0;
+    margin: -24px -24px 32px -24px;
+    position: relative;
+    z-index: 0;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding-left: 0;
+    line-height: 32px;
+    list-style-type: none;
+}
+
+.plan-card li {
+    position: relative;
+    padding-left: 32px;
+}
+
+.plan-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230070c0'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.office-size {
+    display: inline-block;
+    background-color: #d6eeff;
+    color: #0070c0;
+    font-weight:bold;
+    padding: 8px 16px;
+    border-radius: 16px;
+    letter-spacing: 0.12em;
+    font-size: 0.7em;
+    position: absolute;
+    top: 84px;
+    left: 24px;
+    z-index: 1;
+}
+
+.cos-option h3 {
+    font-size: 24px;
+    text-shadow: 0px 2px 2px #0574c3;
+    padding: 24px;
+    background: linear-gradient(to top, #35a3f2, #0070c0);
+    color: white;
+    border-radius: 16px 16px 0 0;
+    margin: -24px -24px 24px -24px;
+    position: relative;
+    z-index: 0;
+}
+
+.cos-type {
+    display: inline-block;
+    background-color: #d6eeff;
+    color: #0070c0;
+    font-weight:bold;
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-size: 16px;
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    z-index: 1;
+}
+
+.nbn-speed {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.nbn-speed-note {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.quote-form-section {
+    background-color: #f5f5f7;
+}
+
+.quote-form-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+#quoteForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Style for dropdown menus */
+select#selectedPlan,
+select#selectedCoS {
+    width: 100%;
+    padding: 10px 30px 10px 10px; /* Increased right padding for arrow */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-family: 'Work Sans', sans-serif;
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none; /* Remove default arrow icon */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px top 50%;
+    background-size: 8px auto;
+}
+
+select#selectedPlan:focus,
+select#selectedCoS:focus {
+    border: 2px #0070c0;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Style for the placeholder option */
+select#selectedPlan option[value=""],
+select#selectedCoS option[value=""] {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    width: fit-content;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.required {
+    color: red;
+}
+
+.fibre-install-section {
+    background-color: #0066cc;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.fibre-install-section h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    #quoteForm {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    .form-group {
+        margin-bottom: 24px;
+    }
+    .full-width {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .quote-form-section {
+        padding: 40px 0;
+    }
+    #quoteForm {
+        gap: 4px;
+    }
+    .quote-form-section h2 {
+        font-size: 28px;
+    }
+    .submit-btn {
+        width: 100%;
+    }
+}
+@media (min-width: 768px) {
+    .benefit {
+        width: 45%;
+    }
+    .plan-card, .cos-option {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .benefit {
+        width: calc(22% - 12px);
+    }
+    .plan-card {
+        width: calc(29% - 12px);
+    }
+    .cos-option {
+        width: calc(46% - 12px);
+    }
+}
