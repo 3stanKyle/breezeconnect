@@ -1,3 +1,9 @@
+/* Prevent horizontal scrollbar */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
 body {
     margin: 0;
     padding: 0;
