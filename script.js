@@ -113,3 +113,41 @@ document.getElementById('addressInput').addEventListener('input', function(e) {
           }
         });
       });
+
+// Function to add blur effect
+function addBlurEffect() {
+    document.querySelector('main').classList.add('blur-effect');
+  }
+  
+  // Function to remove blur effect
+  function removeBlurEffect() {
+    document.querySelector('main').classList.remove('blur-effect');
+  }
+  
+  // Add event listeners to all dropdown elements
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', addBlurEffect);
+    dropdown.addEventListener('mouseleave', removeBlurEffect);
+  });
+  
+  // For mobile devices
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('click', function(e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+          addBlurEffect();
+        } else {
+          removeBlurEffect();
+        }
+      }
+    });
+  });
+  
+  // Remove blur effect when resizing to desktop view
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      removeBlurEffect();
+    }
+  });
